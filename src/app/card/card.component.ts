@@ -9,6 +9,7 @@ import {Event} from '../event';
 export class CardComponent implements OnInit {
   @Input() event: Event;
 
+  currentRate = 3;
 
   constructor() {
   }
@@ -22,5 +23,10 @@ export class CardComponent implements OnInit {
     const monthNumber = Number(date.split('.')[1]) - 1;
     const dayNumber = date.split('.')[0];
     return [dayNumber, shortMonthName[monthNumber]];
+  }
+
+  setRating(rating){
+
+    console.log(this.currentRate);
   }
 }

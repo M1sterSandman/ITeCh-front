@@ -33,7 +33,7 @@
   </div>
 
   <div class="feedback ml-3">
-    <ngb-rating max="5" [(rate)]="event.current_rate">
+    <ngb-rating max="5" [(rate)]="currentRate" (rateChange)="setRating($event)">
       <ng-template let-fill="fill" let-index="index">
         <span class="star" [class.filled]="fill === 100">&#9733;</span>
       </ng-template>
@@ -41,6 +41,12 @@
     <div class="input_field">
       <input type="text" placeholder="Введіть відгук">
       <button class="send_button">Опублікувати</button>
+    </div>
+    <div class="users_feedback">
+      <h2 class="feedback_logo_text">Відгуки:</h2>
+      <p class="feedback_text">1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
+      <p class="feedback_text">2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
+      <p class="feedback_text">3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
     </div>
   </div>
 </div>

@@ -39,7 +39,8 @@ a{
 }
 
 .event_image{
-
+  width: 100%;
+  height: auto;
 }
 
 .description{
@@ -105,6 +106,26 @@ ngb-rating{
 .send_button:hover{
   color: #595959;
 }
+
+.feedback_logo_text{
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  margin: 20px 0 -10px 0;
+}
+.feedback_text{
+  width: 80%;
+  height: auto;
+  font-size: 1.1em;
+  font-family: "Roboto", sans-serif;
+  margin: 25px 0;
+  line-height: 1.5;
+}
+.feedback_text:nth-child(0){
+  margin: 0!important;
+}
+
+
+
 
 @media screen and (max-width: 520px){
   .input_field>input {
