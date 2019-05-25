@@ -1,4 +1,5 @@
-<app-card>
-
-</app-card>
+<app-card
+*ngFor="let event of eventList"
+[event]="event"
+></app-card>
 

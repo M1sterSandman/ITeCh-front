@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }   from '@angular/common/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,6 +16,7 @@ import { CardListComponent } from './card-list/card-list.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
