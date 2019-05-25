@@ -1,0 +1,50 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.card{
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.company{
+
+}
+.company_logo{
+  width: 40px;
+}
+.company_image{
+  border-radius: 50%;
+  width: 100%;
+}
+
+.company_name>a>h2{
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.company_name>a>h2:hover{
+
+}
+
+.event_image{
+
+}
+.description{
+
+}
+
+.date_number>p, .date_month_name>p{
+  font-size: 1.3em;
+}
+.date_number>p{
+  color: #d60100;
+}
+.date_month_name>p{
+  text-transform: uppercase;
+}
+.event_name>a>h1{
+  font-size: 1.5em;
+}
