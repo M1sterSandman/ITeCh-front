@@ -9,9 +9,17 @@ export class EventService {
 
   constructor(private http: HttpClient) {}
 
-  link = 'http://127.0.0.1:5000/api/';
+  link = "https://itech-9245d.firebaseio.com/events";
 
   load() {
-    return this.http.get<Event []>(this.link + 'events');
+    return this.http.get(this.link + '.json');
+  }
+
+  addFeedback(post_id, feedback) {
+    return this.http.patch(this.link + "/" + post_id.toString() + "/feedback.json", feedback);
+  }
+
+  setRating(post_id, rating) {
+    return this.http.patch(this.link + "/" + post_id.toString() + ".json", {"rating":rating});
   }
 }

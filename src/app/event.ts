@@ -7,4 +7,6 @@ export interface Event {
   title: string;
   event_link: string;
   current_rate: number;
+  feedback: Array<string>,
+  rating: number
 }
