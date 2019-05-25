@@ -1,22 +1,22 @@
-<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 m-2">
+<div class="row card">
   <div class="company ml-3 m-1 d-flex justify-content-start align-items-center">
     <div class="company_logo">
-      <a href="https://www.facebook.com/ekreativecompany/" target="_blank">
+      <a href="{{event.fb_company_link}}" target="_blank">
         <img class="company_image" src="{{event.logo_img}}" alt="">
       </a>
     </div>
     <div class="company_name ml-3">
-      <a href="https://www.facebook.com/ekreativecompany/" target="_blank" title="Facebook page">
+      <a href="{{event.fb_company_link}}" target="_blank" title="Facebook page">
         <h2>{{event.company_name}}</h2>
       </a>
     </div>
   </div>
   <div class="event_image">
     <a href="#">
-      <img class="img-fluid w-100" src="{{ event.img_link }}" alt="">
+      <img class="card-img-top my-auto img-fluid w-100" src="{{ event.img_link }}" alt="">
     </a>
   </div>
-  <div class="description m-3 d-flex justify-content-start align-items-center">
+  <div class="description m-3 d-flex justify-content-start align-items-end">
     <div class="date d-flex flex-column align-items-center">
       <div class="date_number">
         <p>{{getShortDate(event.date)[0]}}</p>
@@ -25,10 +25,22 @@
         <p>{{getShortDate(event.date)[1]}}</p>
       </div>
     </div>
-    <div class="event_name ml-3">
-      <a href="https://www.facebook.com/events/583393785514213/" target="_blank">
-        <h1 class="text-muted">{{event.title}}</h1>
+    <div class="event_name ml-4">
+      <a href="{{event.event_link}}" target="_blank">
+        <h1 class="">{{event.title}}</h1>
       </a>
+    </div>
+  </div>
+
+  <div class="feedback ml-3">
+    <ngb-rating max="5" [(rate)]="event.current_rate">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <div class="input_field">
+      <input type="text" placeholder="Введіть відгук">
+      <button class="send_button">Опублікувати</button>
     </div>
   </div>
 </div>

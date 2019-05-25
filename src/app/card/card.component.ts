@@ -9,6 +9,7 @@ import {Event} from '../event';
 export class CardComponent implements OnInit {
   @Input() event: Event;
 
+
   constructor() {
   }
 

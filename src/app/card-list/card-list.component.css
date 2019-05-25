@@ -1,0 +1,17 @@
+.wrapper{
+  width: 90%;
+  height: auto;
+  margin: 70px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+app-card{
+  margin: 10px;
+}
+
+@media screen and (max-width: 520px){
+  .container {
+    width: 100%;
+  }
+}

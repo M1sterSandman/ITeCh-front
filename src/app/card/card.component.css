@@ -1,5 +1,10 @@
 *{
   font-family: 'Roboto', sans-serif;
+  /*font-family: 'BabesNeue', sans-serif;*/
+  outline: none;
+}
+button{
+  outline: none;
 }
 a{
   text-decoration: none;
@@ -7,8 +12,12 @@ a{
 }
 .card{
   padding: 0!important;
-  margin: 0!important;
+  margin: 10px!important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 
 .company{
 
@@ -32,19 +41,85 @@ a{
 .event_image{
 
 }
+
 .description{
 
 }
 
-.date_number>p, .date_month_name>p{
-  font-size: 1.3em;
-}
 .date_number>p{
   color: #d60100;
+  font-size: 1.9em;
+  font-weight: bold;
 }
 .date_month_name>p{
   text-transform: uppercase;
+  color: #2c2c2c;
+  font-weight: 600;
 }
 .event_name>a>h1{
   font-size: 1.5em;
+}
+
+.feedback{
+  margin-bottom: 25px;
+}
+
+.star {
+  font-size: 2.0rem;
+  color: #b0c4de;
+}
+.filled {
+  color: #353535;
+}
+ngb-rating{
+  width: 100px;
+  height: auto;
+}
+
+.input_field{
+  width: 100%;
+  margin: 0 auto 0 0;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.input_field>input{
+  width: 60%;
+  height: auto;
+  border: none;
+  border-bottom: 1px solid #7d7d7d;
+  color: #7d7d7d;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+.send_button {
+  background: transparent;
+  border: 1px solid #7d7d7d;
+  border-radius: 15px;
+  font-size: 1.2em;
+  padding: 6px;
+  transition: .2s;
+  margin-left: 10px;
+}
+.send_button:hover{
+  color: #595959;
+}
+
+@media screen and (max-width: 520px){
+  .input_field>input {
+    width: 95%;
+  }
+  .send_button{
+    margin: 10px 4% 0 auto;
+  }
+
+}
+@media screen and (max-width: 360px){
+  .event_image{
+    width: 274px;
+  }
+  .event_name>a>h1{
+    font-size: 1.3em;
+  }
 }

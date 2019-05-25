@@ -7,12 +7,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { CardListComponent } from './card-list/card-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardListComponent
+    CardListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
