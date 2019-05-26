@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="event_image">
-    <a href="#">
+    <a href="{{event.event_link}}">
       <img class="card-img-top my-auto img-fluid w-100" src="{{ event.img_link }}" alt="">
     </a>
   </div>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="feedback ml-3">
-    <ngb-rating max="5" [(rate)]="currentRate" (rateChange)="setRating($event)">
+    <ngb-rating max="5" [(rate)]="event.rating" (rateChange)="setRating($event) ">
       <ng-template let-fill="fill" let-index="index">
         <span class="star" [class.filled]="fill === 100">&#9733;</span>
       </ng-template>
@@ -42,11 +42,9 @@
       <input type="text" placeholder="Введіть відгук">
       <button class="send_button">Опублікувати</button>
     </div>
-    <div class="users_feedback">
+    <div class="users_feedback" *ngIf="event.feedback">
       <h2 class="feedback_logo_text">Відгуки:</h2>
-      <p class="feedback_text">1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
-      <p class="feedback_text">2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
-      <p class="feedback_text">3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error itaque laborum nihil odio, qui voluptatibus. Dolor nam nisi praesentium ullam!</p>
+      <p class="feedback_text" *ngFor="let feedback of event.feedback">{{feedback}}</p>
     </div>
   </div>
 </div>

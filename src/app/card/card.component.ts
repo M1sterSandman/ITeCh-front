@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Event} from '../event';
 
 @Component({
@@ -8,13 +8,13 @@ import {Event} from '../event';
 })
 export class CardComponent implements OnInit {
   @Input() event: Event;
-
-  currentRate = 3;
+  @Output() onChangeRating = new EventEmitter<number>();
 
   constructor() {
   }
 
   ngOnInit() {
+    console.dir(this.event);
   }
 
   getShortDate(date) {
@@ -25,8 +25,7 @@ export class CardComponent implements OnInit {
     return [dayNumber, shortMonthName[monthNumber]];
   }
 
-  setRating(rating){
-
-    console.log(this.currentRate);
+  setRating(rating) {
+    return this.event.rating;
   }
 }

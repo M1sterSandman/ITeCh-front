@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="eventList.length">
   <app-card
   *ngFor="let event of eventList"
   [event]="event"
