@@ -11,6 +11,7 @@ export class CardListComponent implements OnInit {
 
   constructor(private service: EventService) {
   }
+
   eventList: any = [];
 
   ngOnInit() {
