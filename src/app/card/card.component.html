@@ -1,0 +1,50 @@
+<div class="row card">
+  <div class="company ml-3 m-1 d-flex justify-content-start align-items-center">
+    <div class="company_logo">
+      <a href="{{event.fb_company_link}}" target="_blank">
+        <img class="company_image" src="{{event.logo_img}}" alt="">
+      </a>
+    </div>
+    <div class="company_name ml-3">
+      <a href="{{event.fb_company_link}}" target="_blank" title="Facebook page">
+        <h2>{{event.company_name}}</h2>
+      </a>
+    </div>
+  </div>
+  <div class="event_image">
+    <a href="{{event.event_link}}">
+      <img class="card-img-top my-auto" src="{{ event.img_link }}">
+    </a>
+  </div>
+  <div class="description m-3 d-flex justify-content-start align-items-center">
+    <div class="date d-flex flex-column align-items-center">
+      <div class="date_number">
+        <p>{{getShortDate(event.date)[0]}}</p>
+      </div>
+      <div class="date_month_name">
+        <p>{{getShortDate(event.date)[1]}}</p>
+      </div>
+    </div>
+    <div class="event_name ml-4">
+      <a href="{{event.event_link}}" target="_blank">
+        <h1 class="">{{event.title}}</h1>
+      </a>
+    </div>
+  </div>
+
+  <div class="feedback ml-3">
+    <ngb-rating max="5" [(rate)]="event.rating" (rateChange)="setRating($event) ">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <div class="input_field">
+      <input type="text" placeholder="Введіть відгук"  #feedback>
+      <button class="send_button" (click)="addFeedbackHandler(feedback.value);feedback.value=''">Опублікувати</button>
+    </div>
+    <div class="users_feedback" *ngIf="event.feedback">
+      <h2 class="feedback_logo_text">Відгуки:</h2>
+      <p class="feedback_text" *ngFor="let feedback of event.feedback">{{feedback}}</p>
+    </div>
+  </div>
+</div>

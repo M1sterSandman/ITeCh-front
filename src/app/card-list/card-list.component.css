@@ -1,0 +1,38 @@
+.wrapper{
+  width: 90%;
+  height: auto;
+  margin: 70px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+app-card{
+  margin: 10px;
+  width: 80vw;
+}
+
+@media screen and (max-width: 720px){
+  app-card{
+    margin: 0;
+    width: 100vw;
+  }
+}
+
+
+@media screen and (min-width: 1024px){
+  .wrapper{
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  app-card{
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 1440px){
+  app-card{
+    width: 50vw;
+  }
+}
