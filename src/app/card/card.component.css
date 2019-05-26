@@ -127,9 +127,6 @@ ngb-rating{
   margin: 0!important;
 }
 
-
-
-
 @media screen and (max-width: 520px){
   .input_field>input {
     width: 95%;
