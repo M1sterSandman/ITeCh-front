@@ -20,4 +20,16 @@ export class CardListComponent implements OnInit {
       }
     );
   }
+
+  setRating(card_id, rating) {
+    this.service.setRating(card_id, rating).subscribe(rating => {
+      this.eventList[Number(card_id)].rating = rating;
+    });
+  }
+
+  setFeedback(card_id, feedback) {
+    this.service.addFeedback(card_id, feedback).subscribe(feedback => {
+      console.log(feedback);
+    });
+  }
 }

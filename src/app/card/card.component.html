@@ -39,8 +39,8 @@
       </ng-template>
     </ngb-rating>
     <div class="input_field">
-      <input type="text" placeholder="Введіть відгук">
-      <button class="send_button">Опублікувати</button>
+      <input type="text" placeholder="Введіть відгук"  #feedback>
+      <button class="send_button" (click)="addFeedbackHandler(feedback.value);feedback.value=''">Опублікувати</button>
     </div>
     <div class="users_feedback" *ngIf="event.feedback">
       <h2 class="feedback_logo_text">Відгуки:</h2>

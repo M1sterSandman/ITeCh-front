@@ -1,6 +1,8 @@
 <div class="wrapper" *ngIf="eventList.length">
   <app-card
-  *ngFor="let event of eventList"
+  *ngFor="let event of eventList; let i = index"
   [event]="event"
+  (onChangeRating)="setRating(i, $event)"
+  (onAddFeedback)="setFeedback(i, $event)"
   ></app-card>
 </div>

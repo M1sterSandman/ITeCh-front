@@ -9,6 +9,7 @@ import {Event} from '../event';
 export class CardComponent implements OnInit {
   @Input() event: Event;
   @Output() onChangeRating = new EventEmitter<number>();
+  @Output() onAddFeedback = new EventEmitter<Array<string>>();
 
   constructor() {
   }
@@ -26,6 +27,19 @@ export class CardComponent implements OnInit {
   }
 
   setRating(rating) {
-    return this.event.rating;
+    return this.onChangeRating.emit(rating);
+  }
+
+  addFeedback(feedback: string) {
+    if (!this.event.feedback) {
+      this.event.feedback = [];
+    }
+    this.event.feedback.push(feedback);
+    return this.onAddFeedback.emit(this.event.feedback);
+  }
+
+  addFeedbackHandler(feedback) {
+    console.dir(feedback);
+    this.addFeedback(feedback);
   }
 }
